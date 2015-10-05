@@ -1,0 +1,68 @@
+// Place all the styles related to the Tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#graph {
+  background: rgba(255,255,255,.4);
+  margin-left: 300px;
+  width: 800px; 
+  height: 800px;
+
+  }
+#theImg {
+    border-radius: 50%;
+    width:10%;
+  height:auto;
+}
+#presitrend{
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+body{
+ background-image: url("http://wallpapercolor.net/wallpapers/blue-red-white-wallpaper-15442.jpg");
+ background-size: 100% auto;
+}
+#header{
+  float:left;
+  width:120em;
+  height:5em; 
+  padding-right: 17%;
+  background: url("http://wallpaperology.com/zombie/71008-RedBlue-Background-Abstract-1.jpg"); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+ .panel{
+ height: 200px;
+  overflow-y: scroll;
+ }
+ p.dtweet {
+    background-color: #48BCFF;
+    color: white;
+    padding: 20;
+    font-size: 18px;
+    font-family: HelveticaNeue-Light;
+    border-radius: 5px;
+}
+ p.rtweet {
+    background-color: #FF0000;
+    color: white;
+    padding: 20;
+    font-size: 18px;
+    font-family: HelveticaNeue-Light;
+    border-radius: 5px;
+}
+
+.cand {
+  background-color: white;
+  width: 50%;
+  height: 100px;
+  margin-top: 18px;
+  margin-left: 275px;
+  position: relative;
+  z-index: 1;
+}
+
+
+

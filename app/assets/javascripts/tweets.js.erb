@@ -1,0 +1,49 @@
+var count = 0; 
+ setInterval(makeRequest,5000);
+
+function printimage(candidate) {
+  //hilary_clinton
+ // return '<%= asset_path "hillary_clinton.jpg" %>'
+   return '/assets/' + candidate + '.jpg'
+}
+
+  var last_id = null;
+ function makeRequest () {
+   $.getJSON( "http://localhost:3000/gettweet.json").done(updateData);
+ }
+
+
+ function updateData (data) {
+    if (data.id == last_id ) return;
+    last_id = data.id;
+     
+    if (data.party == "Democrat") {
+    
+ // console.log('<%= image_tag("hillary_clinton")%>');
+    var d = $('<p>');
+    d.attr("id",(count).toString());
+    d.addClass('dtweet');
+    console.log((count).toString());
+    var img = $('<img id="theImg" src='+printimage(data.candslug)+ '/>');
+    d.text(data.tweet);
+    d.prepend(img);
+    $('#candidate').append(d);
+  }
+    else {
+    var r = $('<p>');
+    r.attr("id",(count).toString());
+    r.addClass('rtweet');
+    var img = $('<img id="theImg" src='+printimage(data.candslug)+ '/>');
+    r.text(data.tweet);
+    r.prepend(img);
+    $('#candidate').append(r);
+    }
+     count = count + 1;
+    //var p = $('<p>');
+   // p.addClass('tweet');
+    //p.text(data.tweet);
+   //$('body').append(p);
+   $('#candidate').animate({
+    scrollTop: $('#candidate').get(0).scrollHeight
+}, 1500);
+ }

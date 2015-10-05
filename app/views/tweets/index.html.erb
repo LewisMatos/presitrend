@@ -1,0 +1,89 @@
+ 
+
+
+ <section id="header"> <h1 id="presitrend">PRESIDENTIAL CANDIDATE TWITTER TREND</h1>  
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg- cand">
+ <div id="candidate" class="panel panel-default">
+      </div>
+    </div>
+    <div class="col-lg-1">
+    </div>
+  </div>
+</div>
+</section>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"> </script>
+  <script src="http://datamaps.github.io/scripts/datamaps.usa.min.js"></script>
+
+<div id="graph"></div>
+
+
+<script>
+
+  var my_data; 
+
+
+setInterval(function(){
+  $.get('/getpopcandidate').done(function(data){ 
+    var hash = {};
+    for (var i in data) {
+      if (data[i].cand_pop < 1) {
+       hash[i] = {
+       'fillKey':0, 
+       'name':"none", 
+       'pop':data[i].cand_pop
+      }; 
+      } else {
+        hash[i] = {
+         'fillKey':data[i].cand_id, 
+         'name':data[i].candidate, 
+         'pop':data[i].cand_pop
+        }; 
+      }
+        
+    }
+    my_data = hash;
+    $("#graph").empty();
+    drawMap();
+
+  });
+},1000);
+
+
+
+ function drawMap (argument) {
+    var election = new Datamap({
+  scope: 'usa',
+  element: document.getElementById('graph'),
+  geographyConfig: {
+    highlightBorderColor: '#bada55',
+   popupTemplate: function(geography, data) {
+      return '<div class="hoverinfo">' + geography.properties.name +' candidate Name: '+ data.name +'Tweets:' +  data.pop + ' '
+    },
+    highlightBorderWidth: 3
+  },
+
+  fills: {
+  '1': '#CC4731',
+  '2': '#306596',
+  '3': '#667FAF',
+  '4': '#A9C0DE',
+  '5': '#CA5E5B',
+  '6': '#EAA9A8',
+  defaultFill: '#eee'
+},
+data: my_data
+});
+election.labels();
+ }
+</script>
+
+
