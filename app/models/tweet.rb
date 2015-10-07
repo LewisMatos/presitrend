@@ -61,6 +61,9 @@ class Tweet < ActiveRecord::Base
     WV: "West Virginia",
     WY: "Wyoming"
 }
+
+
+
   candidates =  Candidate.all
   #states =  Popcounter.column_names
   while true
