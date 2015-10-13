@@ -1,54 +1,137 @@
-// Place all the styles related to the Tweets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+  * {margin: 0;padding: 0;}
+html {  height: 100%; }
+body {  min-height: 100%; 
+background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/squared_metal.png);}
+
+.panel-default {
+border-color: none;
+ box-shadow: none;
+    border: none;
+    line-height: initial;
+}
+
+.hoverinfo{
+color: red;
+}
+
+body,html,.container,.main, .main > div {
+  height:100%;
+}
+
+svg {
+  height:1200px;
+
+}
+
+.container-fluid {
+      height: 100%;
+}
+
+.map {
+  position:relative;
+}
+
 #graph {
-  background: rgba(255,255,255,.4);
-  margin-left: 300px;
-  width: 800px; 
-  height: 800px;
-  }
-
-#theImg {
-    border-radius: 50%;
-    width:10%;
-  height:auto;
+    height: 1200px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 1200px;
+    transform: translate(-50%,-50%);
 }
-#presitrend{
-  text-align: center;
-  color: white;
-  font-size: 20px;
+#alignimage{
+    width:800px;
+    margin:0 auto 0 auto;
+    margin-right: 200px;
+    margin-top: -150px;
+
 }
 
- .panel{
- height: 200px;
-  overflow-y: scroll;
+.keyimage{
+  height: 70px;
+  width: 70px;
+
+  border-radius: 1000px;
+  
+}
+        #hillary_clinton{border: 10px solid #2E0DC0;}
+        #lawrence_lessig{border: 10px solid #A80000;}
+        #martin_omalley{border: 10px solid #5C8AA8;}
+        #bernie_sanders{border: 10px solid #328ae8;}
+        #jim_webb{border: 10px solid #0174FF;}
+        #jeb_bush{border: 10px solid #9F0000;}
+        #ben_carson{border: 10px solid #7F0000;}
+        #chris_christie{border: 10px solid #FF372D;}
+        #ted_cruz{border: 10px solid #F80000;}
+        #carly_fiorina{border: 10px solid #8A1A00;}
+        #jim_gilmore{border: 10px solid #6A0000;}
+        #lindsey_graham{border: 10px solid #540000;}
+        #mike_huckabee{border: 10px solid #CF1721;}
+        #bobby_jindal{border: 10px solid #D40000;}
+        #john_kasich{border: 10px solid #B41C1A;}
+        #george_pataki{border: 10px solid #E32736;}
+        #rand_paul{border: 10px solid #E72122;}
+        #marco_rubio{border: 10px solid #480000;}
+        #rick_santorum{border: 10px solid #9D0000;}
+        #donald_trump{border: 10px solid #DD639C;}
+
+#candidateimage  {
+  left: 0;
+  top: 0;
+  transform: translate(-50%,-50%);
+  height: 40px;
+  width: 40px;
+  border-radius: 1000px;
+  border: 3px solid white;
+  background-color: #aaa;
+}
+
+#tweetpanel {
+  background-color: white;
+  /*position: relative;*/
+  float: left;
+  z-index: 1;
+  padding: 18px;
+  /*box-sizing: border-box;*/
+  float: left;
+  width: 30%;
+  box-shadow: 5px 0 9px #ccc;
+  box-sizing:border-box;
+  overflow: scroll;
+}
+ 
+.panel{
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 99%;
+    box-shadow: none;
+    border: none;
+    line-height: initial;
+    padding: 10;
+
  }
+
  p.dtweet {
-    background-color: #48BCFF;
+        background-color: #48BCFF;
     color: white;
-    padding: 20;
+    padding: 5px;
     font-size: 18px;
     font-family: HelveticaNeue-Light;
     border-radius: 5px;
+    margin-left: 20px;
 }
  p.rtweet {
-    background-color: #FF0000;
+       background-color: #FF0000;
     color: white;
-    padding: 20;
+    padding: 5px;
     font-size: 18px;
     font-family: HelveticaNeue-Light;
     border-radius: 5px;
+    margin-left: 20px;
 }
 
-.cand {
-  background-color: white;
-  width: 50%;
-  height: 100px;
-  margin-top: 18px;
-  margin-left: 275px;
-  position: relative;
-  z-index: 1;
-}
+
 
 
 

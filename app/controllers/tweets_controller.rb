@@ -4,7 +4,6 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    #Tweet.stream
     Thread.new{Tweet.stream}
   end
   

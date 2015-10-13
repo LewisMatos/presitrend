@@ -53,7 +53,9 @@ end
 gem 'tweetstream'
 gem 'pry'
 gem 'prybaby'
- gem 'puma'
+ # gem 'puma'
+
+ gem 'seed_dump'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'sanitize'
 gem 'json'

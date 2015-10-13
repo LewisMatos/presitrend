@@ -1,86 +1,73 @@
- 
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-1"></div>
-    <div class="col-lg- cand">
- <div id="candidate" class="panel panel-default">
-      </div>
+ <div class="container-fluid">
+  <div class="row main">
+    <div class="col-lg-6" id="tweetpanel">
+       <div id="candidate" class="panel panel-default">
+        </div>
     </div>
-    <div class="col-lg-1">
+    <div class='col-lg-8 map'>
+       <div id="graph"></div>
     </div>
   </div>
 </div>
-</section>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<div id ="alignimage">
+ <img class="keyimage" id="hillary_clinton" src="/assets/hillary_clinton.jpg"/> 
+      <img class="keyimage" id="ben_carson" src="/assets/ben_carson.jpg"/> 
+      <img class="keyimage" id="bernie_sanders" src="/assets/bernie_sanders.jpg"/> 
+      <img class="keyimage" id="bobby_jindal" src="/assets/bobby_jindal.jpg"/> 
+      <img class="keyimage" id="carly_fiorina" src="/assets/carly_fiorina.jpg"/> 
+      <img class="keyimage" id="chris_christie" src="/assets/chris_christie.jpg"/> 
+      <img class="keyimage" id="donald_trump" src="/assets/donald_trump.jpg"/> 
+      <img class="keyimage" id="george_pataki" src="/assets/george_pataki.jpg"/> 
+      <img class="keyimage" id="jeb_bush" src="/assets/jeb_bush.jpg"/> 
+      <img class="keyimage" id="jim_gilmore" src="/assets/jim_gilmore.jpg"/> 
+      <img class="keyimage" id="jim_webb" src="/assets/jim_webb.jpg"/> 
+      <img class="keyimage" id="john_kasich" src="/assets/john_kasich.jpg"/> 
+      <img class="keyimage" id="lawrence_lessig" src="/assets/lawrence_lessig.jpg"/> 
+      <img class="keyimage" id="lindsey_graham" src="/assets/lindsey_graham.jpg"/> 
+      <img class="keyimage" id="marco_rubio" src="/assets/marco_rubio.jpg"/> 
+      <img class="keyimage" id="martin_omalley" src="/assets/martin_omalley.jpg"/> 
+      <img class="keyimage" id="mike_huckabee" src="/assets/mike_huckabee.jpg"/> 
+      <img class="keyimage" id="rand_paul" src="/assets/rand_paul.jpg"/> 
+      <img class="keyimage" id="rick_santorum" src="/assets/rick_santorum.jpg"/> 
+      <img class="keyimage" id="ted_cruz" src="/assets/ted_cruz.jpg"/> 
+</div>
+     <!--    hillary_clinton
+        lawrence_lessig
+        martin_omalley
+        bernie_sanders
+        jim_webb
+        jeb_bush
+        ben_carson
+        chris_christie
+        ted_cruz
+        carly_fiorina
+        jim_gilmore
+        lindsey_graham
+        mike_huckabee
+        bobby_jindal
+        john_kasich
+        george_pataki
+        rand_paul
+        marco_rubio
+        rick_santorum
+        donald_trump -->
+
+    
+      
+     
+
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+ <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+ 
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+ 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"> </script>
   <script src="http://datamaps.github.io/scripts/datamaps.usa.min.js"></script>
-
-<div id="graph"></div>
-
-
-<script>
-
-  var my_data; 
+-->
+ 
 
 
-setInterval(function(){
-  $.get('/getpopcandidate').done(function(data){ 
-    var hash = {};
-    for (var i in data) {
-      if (data[i].cand_pop < 1) {
-       hash[i] = {
-       'fillKey':0, 
-       'name':"none", 
-       'pop':data[i].cand_pop
-      }; 
-      } else {
-        hash[i] = {
-         'fillKey':data[i].cand_id, 
-         'name':data[i].candidate, 
-         'pop':data[i].cand_pop
-        }; 
-      }
-        
-    }
-    my_data = hash;
-    $("#graph").empty();
-    drawMap();
-
-  });
-},1000);
-
-
-
- function drawMap (argument) {
-    var election = new Datamap({
-  scope: 'usa',
-  element: document.getElementById('graph'),
-  geographyConfig: {
-    highlightBorderColor: '#bada55',
-   popupTemplate: function(geography, data) {
-      return '<div class="hoverinfo">' + geography.properties.name +' candidate Name: '+ data.name +'Tweets:' +  data.pop + ' '
-    },
-    highlightBorderWidth: 3
-  },
-
-  fills: {
-  '1': '#CC4731',
-  '2': '#306596',
-  '3': '#667FAF',
-  '4': '#A9C0DE',
-  '5': '#CA5E5B',
-  '6': '#EAA9A8',
-  defaultFill: '#eee'
-},
-data: my_data
-});
-election.labels();
- }
-</script>
+<!-- <script></script> -->
 
 
