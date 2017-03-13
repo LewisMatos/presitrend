@@ -1,5 +1,9 @@
 Presitrend - A Rails application that uses twitter's open-stream api and D3.js to display the most trending presidential candidate tweets per state on a map of the US.
-+ Customized tweetstream gem to search and filter tweets mentioning presidential candidates
-+ Implemented Active-Record and PostgresSQL to persist tweets to analyze the data and make api calls
-+ Applied Ajax to dynamically request Data from the server using Json
-+ Used D3.js to create a SVG map of the US that updated dynamically based on tweets of presidential candidates
+
+Customized tweetstream gem to search and filter tweets mentioning presidential candidates
+
+Implemented Active-Record and PostgresSQL to persist tweets to analyze the data and make api calls
+
+Applied Ajax to dynamically request Data from the server using JDON
+
+Used D3.js to create a SVG map of the US that updated dynamically based on tweets of presidential candidates
