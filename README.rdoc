@@ -1,28 +1,5 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Presitrend - A Rails application that uses twitter's open-stream api and D3.js to display the most trending presidential candidate tweets per state on a map of the US.
++ Customized tweetstream gem to search and filter tweets mentioning presidential candidates
++ Implemented Active-Record and PostgresSQL to persist tweets to analyze the data and make api calls
++ Applied Ajax to dynamically request Data from the server using Json
++ Used D3.js to create a SVG map of the US that updated dynamically based on tweets of presidential candidates
