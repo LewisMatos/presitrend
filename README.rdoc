@@ -1,3 +1,6 @@
+Heroku
+https://presitrend.herokuapp.com/
+
 Presitrend - A Rails application that uses twitter's open-stream api and D3.js to display the most trending presidential candidate tweets per state on a map of the US.
 
 Customized tweetstream gem to search and filter tweets mentioning presidential candidates
