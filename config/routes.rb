@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   #resources :tweets
-  get 'tweets' => 'tweets#index'
+  get '/' => 'tweets#index'
   get 'gettweet' => 'tweets#gettweet'  
   get 'getpopcandidate' => 'tweets#getpopcandidate'
 
